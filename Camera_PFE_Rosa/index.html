@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff5fa">
+  <title>Camera PFE | Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="marca" href="#" aria-label="Camera PFE início">
+        <span class="marca-icone">✿</span>
+        <span>camera<span class="marca-destaque">pfe</span><small>PHOTO STUDIO</small></span>
+      </a>
+      <button id="btnTema" class="tema-btn" type="button" aria-label="Ativar modo escuro">
+        <span id="iconeTema">☾</span><span id="textoTema">Modo escuro</span>
+      </button>
+    </header>
+
+    <section class="introducao">
+      <p class="sobretitulo">SEU MOMENTO, DO SEU JEITO</p>
+      <h1>Um clique, <span>uma lembrança.</span></h1>
+      <p class="descricao">Use sua câmera, escolha seu melhor sorriso e salve uma foto personalizada.</p>
+    </section>
+
+    <section class="campo-nome cartao">
+      <div class="campo-titulo">
+        <span class="numero">01</span>
+        <div><h2>Quem está na foto?</h2><p>Seu nome será incluído na imagem final.</p></div>
+      </div>
+      <label for="nomeAluno">Nome do aluno</label>
+      <input id="nomeAluno" type="text" placeholder="Digite seu nome aqui..." maxlength="70" autocomplete="name">
+    </section>
+
+    <section class="conteudo">
+      <article class="cartao painel-camera">
+        <div class="cabecalho-cartao">
+          <div class="campo-titulo compacto"><span class="numero">02</span><div><h2>Capturar</h2><p>Prepare a câmera e faça seu registro.</p></div></div>
+          <span id="statusCamera" class="status"><i></i> Desligada</span>
+        </div>
+        <div class="visual camera-visual">
+          <video id="video" autoplay playsinline muted></video>
+          <div id="mensagemVideo" class="placeholder">
+            <span class="placeholder-icone">♡</span>
+            <strong>Sua câmera está esperando</strong>
+            <p>Clique em “Ligar câmera” para começar.</p>
+          </div>
+        </div>
+        <div class="botoes">
+          <button id="btnLigar" class="botao botao-rosa" type="button"><span>↗</span> Ligar câmera</button>
+          <button id="btnCapturar" class="botao botao-principal" type="button" disabled><span>◎</span> Capturar foto</button>
+          <button id="btnDesligar" class="botao botao-neutro" type="button" disabled>Desligar</button>
+        </div>
+        <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+      </article>
+
+      <article class="cartao painel-resultado">
+        <div class="cabecalho-cartao">
+          <div class="campo-titulo compacto"><span class="numero">03</span><div><h2>Sua foto</h2><p>O filtro e os dados aparecem na imagem.</p></div></div>
+          <span class="selo-filtro">✧ SÉPIA</span>
+        </div>
+        <div class="visual resultado-visual">
+          <canvas id="canvas" width="640" height="480"></canvas>
+          <div id="mensagemCanvas" class="placeholder">
+            <span class="placeholder-icone">♡</span>
+            <strong>A foto vai aparecer aqui</strong>
+            <p>Ela será exibida neste quadro após a captura.</p>
+          </div>
+        </div>
+        <div class="resultado-info"><span class="ponto-rosa"></span><span id="infoFoto">Nenhuma foto capturada ainda</span></div>
+        <button id="btnBaixar" class="botao botao-download" type="button" disabled>↓ &nbsp; Baixar foto em PNG</button>
+      </article>
+    </section>
+
+    <footer><span>✿ camera pfe</span><span>Feito para registrar bons momentos.</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
